@@ -89,13 +89,13 @@ def main():
 
     while True:
         open_prompt = question_prompts[prompt_id]
+        response_id_list = open_prompt.get_response_ids()
         print(open_prompt.get_text())
-        response_texts = get_response_texts(open_prompt.get_response_ids(), response_prompts)
-        for response in response_texts:
-            print(response)
+        for response in response_id_list:
+            print('{}: {}'.format(response_prompts[response].get_text(), response))
         print('_____________________________')
 
-        prompt_id = input('')
+        selection = input('')
 
 
 if __name__ == "__main__":
