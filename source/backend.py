@@ -6,7 +6,7 @@ class question_prompt:
         self.text = text
         self.response_ids = response_ids
         for i in response_ids:
-            if i is '':
+            if i is '' or i is '\r':
                 self.response_ids.remove(i)
 
     def get_text(self):
@@ -92,10 +92,15 @@ def main():
         response_id_list = open_prompt.get_response_ids()
         print(open_prompt.get_text())
         for response in response_id_list:
-            print('{}: {}'.format(response_prompts[response].get_text(), response))
+            if response in response_prompts.keys():
+                print('{}: {}'.format(response_prompts[response].get_text(), response))
         print('_____________________________')
 
         selection = input('')
+        response_id = open_prompt.get_response_ids()[int(selection)]
+        response = response_prompts[response_id]
+        prompt_id = response.get_response_ids()
+        print(prompt_id)
 
 
 if __name__ == "__main__":
