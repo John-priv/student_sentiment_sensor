@@ -1,0 +1,9 @@
+{
+    "Question": "What do you want to pick?",
+    "Responses": {
+        "0": "Response 0",
+        "1": "Response 1",
+        "2": "Response 2",
+        "3": "Response 3"
+    }
+}
