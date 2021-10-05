@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 
 class question_prompt:
@@ -6,7 +6,7 @@ class question_prompt:
         self.text = text
         self.response_ids = response_ids
         for i in response_ids:
-            if i is '' or i is '\r':
+            if i == '' or i == '\r':
                 self.response_ids.remove(i)
 
     def get_text(self):
@@ -79,10 +79,19 @@ def get_response_texts(response_id_list, response_prompts_dict):
         response_texts.append(response_prompts_dict[response_id].get_text())
     return response_texts
 
-
+# Examples of valid commands:
+# python3 backend.py
+# python3 backend.py Test_Tree_Question_Prompts.csv Test_Tree_Response_Prompts.csv
 def main():
-    question_prompts = load_spreadsheet('../data/Example_Decision_Tree_Question_Prompts.csv', 'question')  # dict
-    response_prompts = load_spreadsheet('../data/Example_Decision_Tree_Response_Prompts.csv', 'response')  # dict
+    question_prompt_filename = 'Example_Decision_Tree_Question_Prompts.csv'
+    response_prompt_filename = 'Example_Decision_Tree_Response_Prompts.csv'
+
+    if len(sys.argv) >= 3:
+        question_prompt_filename = sys.argv[1]
+        response_prompt_filename = sys.argv[2]
+
+    question_prompts = load_spreadsheet('../data/' + question_prompt_filename, 'question')  # dict
+    response_prompts = load_spreadsheet('../data/' + response_prompt_filename, 'response')  # dict
 
     prompt_id = '0'
     question_prompts[prompt_id].get_response_ids()
