@@ -3,7 +3,7 @@ class question_prompt:
         self.text = text
         self.response_ids = response_ids
         for i in response_ids:
-            if i == '' or i == '\r':
+            if i == '' or i == '\r\n' or i is '\n' or i is None or '\n' in i:
                 self.response_ids.remove(i)
 
     def get_text(self):
