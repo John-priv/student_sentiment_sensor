@@ -4,41 +4,9 @@ import sys
 import prompts
 
 
-def load_spreadsheet_old(spreadsheet, prompt_type):
-    '''
-    OLD FUNCTION (Clean up/staged for removal by 10/29/2021 if not reused)
-    DOES NOT USE CSV LIBRARY. This leads to issues with commas in quotes not being rendered properly
-    Inputs:
-        spreadsheet (string): Name of csv file to load in Student_Sentiment_Sensor/data/
-        prompt_type (string): Options are
-            "question" for question_prompt
-            "response" for response_prompt
-    Output:
-        prompt_dict (dict):
-            - Dictionary of prompts; follows format prompt_dict[prompt_id] = prompts.prompt_type(text, ids)
-    '''
-    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), spreadsheet))
-    opened_file = open(file_path, 'r').read()
-    prompt_dict = {}
-    split_spreadsheet = opened_file.split('\n')
-    for line in range(1, len(split_spreadsheet)):
-        try:
-            data = split_spreadsheet[line].split(',')
-            prompt_id = data[0]
-            text = data[1]
-            if prompt_type == 'question':
-                response_ids = data[2:]
-                prompt_dict[prompt_id] = prompts.question_prompt(text, response_ids)
-            if prompt_type == 'response':
-                question_id = data[2]
-                prompt_dict[prompt_id] = prompts.response_prompt(text, question_id)
-        except Exception as e:
-            print('Error in load_spreadsheet: {} --> {}'.format(split_spreadsheet[line], e))
-    return prompt_dict
-
-
 def load_spreadsheet(spreadsheet, prompt_type):
     '''
+    Loads a spreadsheet (CSV file), trims the header line, and returns a dict of prompt objects
     Inputs:
         spreadsheet (string): Name of csv file to load in Student_Sentiment_Sensor/data/
         prompt_type (string): Options are
