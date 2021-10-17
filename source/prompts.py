@@ -18,5 +18,5 @@ class response_prompt:
     def get_text(self):
         return self.text
 
-    def get_response_ids(self):
+    def get_question_id(self):
         return self.question_id

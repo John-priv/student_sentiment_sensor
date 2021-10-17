@@ -1,10 +1,13 @@
+import csv
 import os
 import sys
 import prompts
 
 
-def load_spreadsheet(spreadsheet, prompt_type):
+def load_spreadsheet_old(spreadsheet, prompt_type):
     '''
+    OLD FUNCTION (Clean up/staged for removal by 10/29/2021 if not reused)
+    DOES NOT USE CSV LIBRARY. This leads to issues with commas in quotes not being rendered properly
     Inputs:
         spreadsheet (string): Name of csv file to load in Student_Sentiment_Sensor/data/
         prompt_type (string): Options are
@@ -31,6 +34,37 @@ def load_spreadsheet(spreadsheet, prompt_type):
                 prompt_dict[prompt_id] = prompts.response_prompt(text, question_id)
         except Exception as e:
             print('Error in load_spreadsheet: {} --> {}'.format(split_spreadsheet[line], e))
+    return prompt_dict
+
+
+def load_spreadsheet(spreadsheet, prompt_type):
+    '''
+    Inputs:
+        spreadsheet (string): Name of csv file to load in Student_Sentiment_Sensor/data/
+        prompt_type (string): Options are
+            "question" for question_prompt
+            "response" for response_prompt
+    Output:
+        prompt_dict (dict):
+            - Dictionary of prompts; follows format prompt_dict[prompt_id] = prompts.prompt_type(text, ids)
+    '''
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), spreadsheet))
+    prompt_dict = {}
+    with open(file_path) as opened_file:
+        csv_file = csv.reader(opened_file)
+        next(csv_file)  # Skips header line
+        for row in csv_file:
+            try:
+                prompt_id = row[0]
+                text = row[1]
+                if prompt_type == 'question':
+                    response_ids = row[2:]
+                    prompt_dict[prompt_id] = prompts.question_prompt(text, response_ids)
+                if prompt_type == 'response':
+                    question_id = row[2]
+                    prompt_dict[prompt_id] = prompts.response_prompt(text, question_id)
+            except Exception as e:
+                print('Error in load_spreadsheet: {} --> {}'.format(row, e))
     return prompt_dict
 
 
@@ -71,7 +105,7 @@ def main():
         selection = input('')
         response_id = open_prompt.get_response_ids()[int(selection)]
         response = response_prompts[response_id]
-        prompt_id = response.get_response_ids()
+        prompt_id = response.get_question_id()
         print(prompt_id)
         if prompt_id == '0':
             do_end = input('Enter anything to exit')
