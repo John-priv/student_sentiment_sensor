@@ -1,0 +1,8 @@
+This folder contains messages from the frontend to the backend in the following format:
+
+{
+    "Question": "What do you want to pick?",
+    "Selected_Response": {
+        "300": "Response 300"
+    }
+}
