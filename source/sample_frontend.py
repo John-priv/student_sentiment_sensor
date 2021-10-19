@@ -31,7 +31,7 @@ def main():
         options = question_data["Responses"]
 
         selection = input('')
-        response_text = options[str(selection).encode('UTF-8')]
+        response_text = options[str(selection)]
 
         latest_sent_time = datetime.now().strftime("%Y%m%d%H%M%S%f")
 
