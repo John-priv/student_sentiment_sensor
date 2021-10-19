@@ -14,12 +14,13 @@ def main():
 
     while True:
         while latest_received_time < latest_sent_time:
-            filenames = os.listdir("./../data/question_messages")
+            file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/question_messages"))
+            filenames = os.listdir(file_path)
             filetimes = [s.split(".")[0] for s in filenames if s.split(".")[1] == 'json']
             latest_received_time = max(filetimes)
             time.sleep(0.05)
 
-        read_file = open("./../data/question_messages/" + latest_received_time + ".json", "r")
+        read_file = open(os.path.join(file_path, latest_received_time + ".json"), "r")
         question_json_string = read_file.read()
         read_file.close()
 
@@ -36,7 +37,9 @@ def main():
 
         json_response = json.dumps({"Question": "Sample text", "Selected_Response": {selection: response_text}}, sort_keys=True, indent=4)
 
-        write_file = open("./../data/response_messages/" + latest_received_time + ".json", "w")
+        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/response_messages"))
+
+        write_file = open(os.path.join(file_path, latest_sent_time + ".json"), "w")
         write_file.write(json_response)
         write_file.close()
 
