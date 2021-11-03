@@ -1,1 +1,2 @@
-*.json
+data/question_messages/*
+data/response_messages/*
