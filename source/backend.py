@@ -2,6 +2,8 @@ import csv
 import os
 import sys
 import prompts
+import backendIO
+from datetime import datetime
 
 
 def load_spreadsheet(spreadsheet, prompt_type):
@@ -64,22 +66,31 @@ def main():
     while True:
         open_prompt = question_prompts[prompt_id]
         response_id_list = open_prompt.get_response_ids()
-        print(open_prompt.get_text())
-        for response in response_id_list:
-            if response in response_prompts.keys():
-                print('{}: {}'.format(response_prompts[response].get_text(), response))
-        print('_____________________________')
+        # print(open_prompt.get_text())
+        # for response in response_id_list:
+        #     if response in response_prompts.keys():
+        #         print('{}: {}'.format(response_prompts[response].get_text(), response))
+        # print('_____________________________')
 
-        selection = input('')
-        response_id = open_prompt.get_response_ids()[int(selection)]
-        response = response_prompts[response_id]
+        time = datetime.now().strftime("%Y%m%d%H%M%S%f")
+
+        print(backendIO.toJSON(open_prompt, response_prompts))
+        backendIO.send_to_frontend(open_prompt, response_prompts, time)
+
+        response = backendIO.read_from_frontend(time, response_prompts)
+
         prompt_id = response.get_question_id()
-        print(prompt_id)
-        if prompt_id == '0':
-            do_end = input('Enter anything to exit')
-            if do_end != '':
-                print('')
-                break
+
+        # selection = input('')
+        # response_id = open_prompt.get_response_ids()[int(selection)]
+        # response = response_prompts[response_id]
+        # prompt_id = response.get_question_id()
+        # print(prompt_id)
+        # if prompt_id == '0':
+        #     do_end = input('Enter anything to exit')
+        #     if do_end != '':
+        #         print('')
+        #         break
 
 
 if __name__ == "__main__":
