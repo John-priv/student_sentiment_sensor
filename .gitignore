@@ -1,3 +1,4 @@
+.vscode
 data/question_messages/*
 data/response_messages/*
-.vscode
+node_modules
