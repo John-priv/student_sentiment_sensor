@@ -33,7 +33,8 @@ def main():
         selection = input('')
         response_text = options[str(selection)]
 
-        latest_sent_time = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        # Truncate time down to the centisecond
+        latest_sent_time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
 
         json_response = json.dumps({"Question": "Sample text", "Selected_Response": {selection: response_text}}, sort_keys=True, indent=4)
 

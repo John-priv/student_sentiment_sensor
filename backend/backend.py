@@ -72,7 +72,8 @@ def main():
         #         print('{}: {}'.format(response_prompts[response].get_text(), response))
         # print('_____________________________')
 
-        time = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        # Truncate time down to the centisecond
+        time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
 
         print(backendIO.toJSON(open_prompt, response_prompts))
         backendIO.send_to_frontend(open_prompt, response_prompts, time)
