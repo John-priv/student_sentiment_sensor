@@ -1,37 +1,27 @@
 import { useEffect, useState } from 'react'
-import {postAns} from "./appUtils.js"
-import {consts} from "./consts.js"
+import { getAndSetData, postAns } from "./appUtils.js"
 
-function App() {                    
-  const [currQ, setCurrQ] = useState({
+function App() {
+
+  const [currData, setCurrData] = useState({
     "Question": "",
     "Responses": {}
   })
 
   useEffect(() => {
-    const setData = () => {
-      fetch(consts.filesysApiPath)
-        .then(resp => resp.json())
-        .then(respJson => {setCurrQ(respJson)})
-        .catch(err => { console.error(err) })
-    }
-    setData()
-    const intervalId = setInterval(() => setData(), 5 * 1000)
-    return () => {
-      clearInterval(intervalId)
-    }
+    getAndSetData(setCurrData)
   }, [])
 
 
   return (
     <div className='app'>
       <div className='question-section'>
-        <div className='question-text'>{currQ.Question}</div>
+        <div className='question-text'>{currData.Question}</div>
       </div>
       <div className='answer-section'>
-        {Object.keys(currQ.Responses).map((respKey) => (
-          <button key={respKey} onClick={() => postAns(respKey, currQ.Responses[respKey], currQ.Question)}>
-            {currQ.Responses[respKey]}
+        {Object.keys(currData.Responses).map((respKey) => (
+          <button key={respKey} onClick={() => postAns(respKey, currData.Responses[respKey], currData, setCurrData)}>
+            {currData.Responses[respKey]}
           </button>
         ))}
       </div>

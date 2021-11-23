@@ -8,7 +8,7 @@ module.exports = {
      * Last 2 places, the centiseconds, will always be 0.
      * @returns string of current time in format "YYYYMMDDhhmmssuuuuuu"
      */
-    getCurrentTime: () => {
+    getCurrTime: () => {
         var now = new Date()
         var timeStr = String(now.getFullYear())
             + ("0" + String(now.getMonth() + 1)).slice(-2)
@@ -43,7 +43,7 @@ module.exports = {
         }
         const dateStrLen = "YYYYMMDDhhmmsscc".length
         const formerLatestTime_num = parseInt10DateStr(formerLatestTime)
-        
+
 
         // Convert array of file names into basenames as YYYYMMDDhhmmsscc-formatted numbers
         const feBeFilesArray = fs.readdirSync(path.resolve(__dirname, consts.BE_FE_PATH_FROM_ROOT))
@@ -54,24 +54,15 @@ module.exports = {
         const whichOfTheseIsMax = feBeFileBasenames_num.concat(formerLatestTime_num)
         const newLatestTime = Math.max(...whichOfTheseIsMax)
 
-        //TODO: convert newLatestTime & formerLatestTime_num to pure microseconds
-        // Warn if hiatus conditions met
-        // if (newLatestTime - formerLatestTime_num > eval(consts.BE_FE_HIATUS_THRESHOLD_US)) {
-        //     console.warn(`Time between latest transmission and the previous one is over ${consts.BE_FE_HIATUS_THRESHOLD_US / (60 * 1000000)}min ago.`)
-        // }
-        // if (currTime - newLatestTime > eval(consts.BE_FE_HIATUS_THRESHOLD_US)) {
-        //     console.warn(`Time since latest transmission is over ${consts.BE_FE_HIATUS_THRESHOLD_US}min.`)
-        // }
-
         return newLatestTime.toString()
     },
 
     /**
      * Retrieves current question from file of latest frontend-backend (FE-BE) transmission.
      * @param {string} latestBeFeFeBeTime latest time of BE-FE transmission
-     * @returns current question, to be displayed to the user
+     * @returns current page data, to be displayed to the user
      */
-    getCurrQ: (latestBeFeFeBeTime) => {
+    getCurrData: (latestBeFeFeBeTime) => {
         var qPath = consts.BE_FE_PATH_FROM_ROOT
             + latestBeFeFeBeTime
             + ".json"
@@ -85,9 +76,18 @@ module.exports = {
      */
     filewriteQAns: (qAns, fileBasename) => {
         fs.writeFile(path.resolve(__dirname,
-                consts.FE_BE_PATH_FROM_ROOT,
-                fileBasename + ".json"),
+            consts.FE_BE_PATH_FROM_ROOT,
+            fileBasename + ".json"),
             JSON.stringify(qAns),
-            err => {if (err) throw err})
-    }
+            err => { if (err) throw err })
+    },
+
+    /**
+     * Helper for waiting.
+     * @param {number} interval_ms time to wait in ms
+     */
+    sleep_ms: (interval_ms) => {
+        var tStart_ms = new Date().getTime();
+        while (new Date() < tStart_ms + interval_ms) { }
+    },
 }
