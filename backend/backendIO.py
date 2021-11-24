@@ -3,11 +3,15 @@ import json
 import os
 import time
 
-def toJSON(qp, rp_dict):
+def questionToJSON(qp, rp_dict):
     question_text = qp.get_text()
     responses = {key: rp_dict[key].get_text() for key in qp.get_response_ids()}
     return json.dumps({"Question": question_text, "Responses": responses}, sort_keys=True, indent=4)
 
+def solutionToJSON(sp, ilp_dict):
+    solution_text = sp.get_text()
+    info_listings = {key: {'Text': ilp_dict[key].get_text(), 'Link': ilp_dict[key].get_info_link()} for key in sp.get_info_listing_ids()}
+    return json.dumps({"Solution": solution_text, "Info Listings": info_listings})
 
 #TODO - discuss what this function should return
 def fromJSON(response_json, qp_dict):
@@ -16,8 +20,16 @@ def fromJSON(response_json, qp_dict):
     return qp_dict[question_id]
 
 
-def send_to_frontend(qp, rp_dict, time):
-    write_text = toJSON(qp, rp_dict)
+def send_question_to_frontend(qp, rp_dict, time):
+    write_text = questionToJSON(qp, rp_dict)
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/question_messages/" + time + ".json"))
+    write_file = open(file_path, "w")
+    write_file.write(write_text)
+    write_file.close()
+
+
+def send_solution_to_frontend(qp, ilp_dict, time):
+    write_text = solutionToJSON(qp, ilp_dict)
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/question_messages/" + time + ".json"))
     write_file = open(file_path, "w")
     write_file.write(write_text)
