@@ -28,16 +28,19 @@ def main():
         print("Note: enter response ID, not index within displayed list")
 
         question_data = json.loads(question_json_string)
-        options = question_data["Responses"]
+        if question_data["Prompt type"] == "Question":
+            options = question_data["Responses"]
 
-        selection = input('')
-        response_text = options[str(selection)]
+            selection = input('')
+            response_text = options[str(selection)]
+
+            json_response = json.dumps({"Question": "Sample text", "Selected_Response": {selection: response_text}}, sort_keys=True, indent=4)
+
+        else:
+            json_response = json.dumps({"Question": "Sample text", "Selected_Response": {10: "Back to beginning"}}, sort_keys=True, indent=4)
 
         # Truncate time down to the centisecond
         latest_sent_time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
-
-        json_response = json.dumps({"Question": "Sample text", "Selected_Response": {selection: response_text}}, sort_keys=True, indent=4)
-
         file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/response_messages"))
 
         write_file = open(os.path.join(file_path, latest_sent_time + ".json"), "w")
@@ -45,7 +48,6 @@ def main():
         write_file.close()
 
         print(json_response)
-
 
 if __name__ == "__main__":
     main()
