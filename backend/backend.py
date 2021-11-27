@@ -70,7 +70,7 @@ def main():
     solution_prompts = load_spreadsheet('../data/' + solution_prompt_filename, 'solution')
     info_listing_prompts = load_spreadsheet('../data/' + info_listing_prompt_filename, 'info_listing')
 
-    prompt_id = '1000'
+    prompt_id = '10'
 
     while True:
         if prompt_id in question_prompts.keys():
