@@ -1,3 +1,14 @@
+'''
+Tree checking tool
+
+CURRENTLY OBSOLETE (2021-26-11)
+    - Does not check for "solution" or "info listing" prompts
+        - Needs solution_prompt support
+        - Needs info_listing_prompt support
+    - Updating this is LOW PRIORITY and can likely be avoided for this capstone
+'''
+
+
 from backend import load_spreadsheet
 
 

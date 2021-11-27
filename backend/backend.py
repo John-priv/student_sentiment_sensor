@@ -20,7 +20,7 @@ def load_spreadsheet(spreadsheet, prompt_type):
     '''
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), spreadsheet))
     prompt_dict = {}
-    with open(file_path) as opened_file:
+    with open(file_path, encoding='utf8') as opened_file:
         csv_file = csv.reader(opened_file)
         next(csv_file)  # Skips header line
         for row in csv_file:
@@ -56,10 +56,10 @@ def main():
     ARGS: backend.py QUESTION_PROMPT_NAME RESPONSE_PROMPT_NAME
         QUESTION_PROMPT_NAME and RESPONSE_PROMPT_NAME are optional args to configure the execution
     '''
-    question_prompt_filename = 'Question_Prompts.csv'
-    response_prompt_filename = 'Response_Prompts.csv'
-    solution_prompt_filename = 'Solution_Prompts.csv'
-    info_listing_prompt_filename = 'Info_Listing_Prompts.csv'
+    question_prompt_filename = 'decision_tree/question_prompts.csv'
+    response_prompt_filename = 'decision_tree/response_prompts.csv'
+    solution_prompt_filename = 'decision_tree/solution_prompts.csv'
+    info_listing_prompt_filename = 'decision_tree/info_listing_prompts.csv'
 
     if len(sys.argv) >= 3:
         question_prompt_filename = sys.argv[1]
@@ -100,13 +100,15 @@ def main():
             prompt_id = '10'
         else:
             print('Bad prompt ID')
-        response_id_list = open_prompt.get_response_ids()
+
+        
+        ########### OLD CODE: CLI backend setup
+        # response_id_list = open_prompt.get_response_ids()
         # print(open_prompt.get_text())
         # for response in response_id_list:
         #     if response in response_prompts.keys():
         #         print('{}: {}'.format(response_prompts[response].get_text(), response))
         # print('_____________________________')
-
 
         # selection = input('')
         # response_id = open_prompt.get_response_ids()[int(selection)]
