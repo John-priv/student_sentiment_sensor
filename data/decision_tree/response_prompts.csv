@@ -1,9 +1,9 @@
 Response ID,Text,Follow-up Question ID or Solution ID
 100,Yes,11
 101,No,10
-110,Academic,11
-111,Social,11
-112,Financial,11
+110,Academic,12
+111,Social,18
+112,Financial,21
 113,Emotional,11
 120,Passing & Preparing for assesments,13
 121,Meeting Deadlines,14
