@@ -6,12 +6,12 @@ import time
 def questionToJSON(qp, rp_dict):
     question_text = qp.get_text()
     responses = {key: rp_dict[key].get_text() for key in qp.get_response_ids()}
-    return json.dumps({"Question": question_text, "Responses": responses}, sort_keys=True, indent=4)
+    return json.dumps({"Prompt type": "Question", "Text": question_text, "Responses": responses}, sort_keys=True, indent=4)
 
 def solutionToJSON(sp, ilp_dict):
     solution_text = sp.get_text()
     info_listings = {key: {'Text': ilp_dict[key].get_text(), 'Link': ilp_dict[key].get_info_link()} for key in sp.get_info_listing_ids()}
-    return json.dumps({"Solution": solution_text, "Info Listings": info_listings})
+    return json.dumps({"Prompt type": "Solution", "Text": solution_text, "Info Listings": info_listings})
 
 #TODO - discuss what this function should return
 def fromJSON(response_json, qp_dict):

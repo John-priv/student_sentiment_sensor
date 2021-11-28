@@ -20,7 +20,7 @@ def load_spreadsheet(spreadsheet, prompt_type):
     '''
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), spreadsheet))
     prompt_dict = {}
-    with open(file_path, encoding='utf8') as opened_file:
+    with open(file_path, 'r') as opened_file:
         csv_file = csv.reader(opened_file)
         next(csv_file)  # Skips header line
         for row in csv_file:
