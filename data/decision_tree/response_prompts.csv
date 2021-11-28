@@ -1,10 +1,10 @@
 Response ID,Text,Follow-up Question ID or Solution ID
 100,Yes,11
-101,No,10
+101,No,1101
 110,Academic,12
 111,Social,18
 112,Financial,21
-113,Emotional,11
+113,Emotional,10
 120,Passing & Preparing for assesments,13
 121,Meeting Deadlines,14
 122,Help With Class Logistics,15
@@ -23,27 +23,27 @@ Response ID,Text,Follow-up Question ID or Solution ID
 170,Unsure how to prepare for Job/Coop Search,1700
 171,Coping with poor success w/ job search,1710
 172,Afraid of not landing a job,1720
-173,Trouble making friends,
-174,Unsure where to get information on  opportunities to meet people?,
-175,Touble Handling Interpersonal Conflicts,
-176,Campus Events,
-177,Clubs & Organizations,
-178,Intramurals,
-179,Group Fitness,
-180,Social-Event App,
-181,Family,
-182,Friends,
-183,Roommate,
-184,Job/Coop,
-185,Confused where to start,
-186,Need help creating & managing your budget,
-187,Current budgeting method isn't effective. Need pointers,
-188,Confused About Deadlines,
-189,Confused where to go to find Financial Information,
-190,New to Work-Study,
-191,Want General Information,
-192,Undergrad,
-193,Graduate,
-194,,
-195,,
-196,,
+180,Trouble making friends,1800
+181,Unsure where to get information on  opportunities to meet people?,1810
+182,Touble Handling Interpersonal Conflicts,19
+190,Family,1900
+191,Friends,1910
+192,Roommate,1920
+193,Job/Coop,1930
+200,Budgeting,21
+201,Financial Aid,22
+202,On-Campus Job Opportunities,2020
+210,Confused where to start,2100
+211,Need help creating & managing your budget,2110
+212,Current budgeting method isn't effective. Need pointers,2120
+220,Confused About Deadlines,2200
+221,Confused where to go to find Financial Information,2210
+222,,
+223,,
+224,,
+225,,
+226,,
+227,,
+228,,
+229,,
+230,,
