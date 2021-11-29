@@ -3,6 +3,7 @@ import os
 import sys
 import prompts
 import backendIO
+import cv
 from datetime import datetime
 
 
@@ -56,6 +57,8 @@ def main():
     ARGS: backend.py QUESTION_PROMPT_NAME RESPONSE_PROMPT_NAME
         QUESTION_PROMPT_NAME and RESPONSE_PROMPT_NAME are optional args to configure the execution
     '''
+    camera = cv.init_cam()
+    
     question_prompt_filename = 'decision_tree/question_prompts.csv'
     response_prompt_filename = 'decision_tree/response_prompts.csv'
     solution_prompt_filename = 'decision_tree/solution_prompts.csv'
@@ -70,10 +73,16 @@ def main():
     solution_prompts = load_spreadsheet('../data/' + solution_prompt_filename, 'solution')
     info_listing_prompts = load_spreadsheet('../data/' + info_listing_prompt_filename, 'info_listing')
 
-    prompt_id = '10'
+    prompt_id = '0'
 
     while True:
-        if prompt_id in question_prompts.keys():
+        if prompt_id == '0':
+            emotion = ''
+            while emotion != 'sad':
+                emotion = cv.get_emotion(camera)[0]
+                print('Emotion: {}'.format(emotion))
+            prompt_id = '10'
+        elif prompt_id in question_prompts.keys():
             open_prompt = question_prompts[prompt_id]
 
             # Truncate time down to the centisecond
@@ -97,7 +106,7 @@ def main():
 
             response = backendIO.read_from_frontend(time, response_prompts)
 
-            prompt_id = '10'
+            prompt_id = '0'
         else:
             print('Bad prompt ID')
 
