@@ -58,6 +58,11 @@ def email_solutions(receiver, rsolution):
     send_email(receiver, text)
 
 
+def solutionToRichSolution(sp, ilp_dict):
+    solution_text = sp.get_text()
+    info_listings = [(ilp_dict[key].get_text(), ilp_dict[key].get_info_link()) for key in sp.get_info_listing_ids()]
+    return solution_rich(solution_text, info_listings)
+
 if __name__ == '__main__':
     links = [("Google", "https://www.google.com/"),
              ("Wikipedia","https://en.wikipedia.org/wiki/Main_Page")]

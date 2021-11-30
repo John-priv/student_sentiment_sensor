@@ -3,6 +3,7 @@ import os
 import sys
 import prompts
 import backendIO
+import email_helper
 from datetime import datetime
 
 
@@ -95,7 +96,12 @@ def main():
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_solution_to_frontend(open_prompt, info_listing_prompts, time)
 
-            response = backendIO.read_from_frontend(time, response_prompts)
+            email_status, email_address = backendIO.read_from_frontend(time, response_prompts)
+
+            rsolution = email_helper.solutionToRichSolution(open_prompt, info_listing_prompts)
+
+            if email_status == 'emailTrue':
+                email_helper.email_solutions(email_address, rsolution)
 
             prompt_id = '10'
         else:

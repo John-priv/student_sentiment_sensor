@@ -17,7 +17,10 @@ def solutionToJSON(sp, ilp_dict):
 def fromJSON(response_json, qp_dict):
     json_dict = json.loads(response_json)
     question_id = list(json_dict["selectedResponse"].keys())[0]
-    return qp_dict[question_id]
+    if question_id in qp_dict.keys():
+        return qp_dict[question_id]
+    elif question_id in ['emailTrue', 'emailFalse']:
+        return question_id, json_dict["selectedResponse"][question_id]
 
 
 def send_question_to_frontend(qp, rp_dict, time):
