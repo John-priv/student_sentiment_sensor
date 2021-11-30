@@ -1,4 +1,4 @@
-import { getTextSubmission, postAns } from "./appUtils.js"
+import { postAns } from "./appUtils.js"
 
 export const GeneralSolution = (props) => {
     const [currData, setCurrData] = [props.currData, props.setCurrData]
@@ -17,16 +17,17 @@ export const GeneralSolution = (props) => {
                     ))}
                 </ul>
             </div>
-            <div className='email-entry-section'>
+            <div className='email-entry-section' style={{"textAlign": "center"}}>
                 <form name="email-form">
+                    <br></br>
                     <label htmlFor="email-entry">If you would like to be sent these resources, feel free to enter your email:</label><br></br><br></br>
-                    <input type="email" id="email-entry-1" name="email-entry" placeholder="Email address"></input>
-                    <input type="submit" value="Submit" onClick={() => postAns("emailTrue", document.forms['email-form'].elements[0].value, currData, setCurrData)}></input>
+                    <input type="email" name="email-entry" placeholder="Email address" style={{"justifyContent": "center", "color": "rgb(0, 0, 0)"}}></input>
+                    <input type="submit" value="Submit" onClick={() => postAns("emailTrue", document.forms['email-form'].elements[0].value, currData, setCurrData)} style={{"color": "rgb(0, 0, 0)"}}></input>
                 </form>
             </div>
-            <div>
-            <br></br><br></br><br></br>
-                <button onClick={() => postAns("emailFalse", "", currData, setCurrData)}>
+            <div style={{"display": "flex", "alignItems": "center", "justifyContent": "center"}}>
+                <br></br><br></br><br></br>
+                <button style={{"justifyContent": "center"}} onClick={() => postAns("emailFalse", "", currData, setCurrData)}>
                     Done with session
                 </button>
             </div>
