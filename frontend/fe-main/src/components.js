@@ -1,7 +1,7 @@
-import { postAns } from "./appUtils.js"
+import { getTextSubmission, postAns } from "./appUtils.js"
 
 export const GeneralSolution = (props) => {
-    const [currData] = [props.currData]
+    const [currData, setCurrData] = [props.currData, props.setCurrData]
 
     return (
         <div className='general-solution'>
@@ -12,18 +12,23 @@ export const GeneralSolution = (props) => {
                 <ul>
                     {Object.keys(currData["Info Listings"]).map((lKey) => (
                         <li key={lKey}>
-                            {console.log(currData["Info Listings"]["Link"])}
                             <a href={currData["Info Listings"][lKey]["Link"]}>{currData["Info Listings"][lKey]["Text"]}</a>
                         </li>
                     ))}
                 </ul>
             </div>
             <div className='email-entry-section'>
-                <form>
-                    <label for="email-entry">If you would like to be sent these resources, feel free to enter your email:</label>
-                    <input type="text" id="email-entry" name="email-entry"></input>
-                    <input type="submit" value="Submit"></input>
+                <form name="email-form">
+                    <label htmlFor="email-entry">If you would like to be sent these resources, feel free to enter your email:</label><br></br><br></br>
+                    <input type="email" id="email-entry-1" name="email-entry" placeholder="Email address"></input>
+                    <input type="submit" value="Submit" onClick={() => postAns("emailTrue", document.forms['email-form'].elements[0].value, currData, setCurrData)}></input>
                 </form>
+            </div>
+            <div>
+            <br></br><br></br><br></br>
+                <button onClick={() => postAns("emailTrue", "", currData, setCurrData)}>
+                    Done with session
+                </button>
             </div>
         </div>
     )

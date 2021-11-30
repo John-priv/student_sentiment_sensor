@@ -20,10 +20,10 @@ export const getAndSetData = (setCurrData) => {
  */
 export const postAns = (respKey, respTxt, currData, setCurrData) => {
     const qAns = {
-        "Question": currData.Text,
-        "Selected_Response": {}
+        "promptText": currData.Text,
+        "selectedResponse": {}
     }
-    qAns["Selected_Response"][respKey] = respTxt
+    qAns["selectedResponse"][respKey] = respTxt
     const headers = {
         method: 'POST',
         mode: 'cors',

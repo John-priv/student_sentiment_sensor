@@ -16,7 +16,7 @@ def solutionToJSON(sp, ilp_dict):
 #TODO - discuss what this function should return
 def fromJSON(response_json, qp_dict):
     json_dict = json.loads(response_json)
-    question_id = list(json_dict["Selected_Response"].keys())[0]
+    question_id = list(json_dict["selectedResponse"].keys())[0]
     return qp_dict[question_id]
 
 
