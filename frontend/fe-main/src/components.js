@@ -26,7 +26,7 @@ export const GeneralSolution = (props) => {
             </div>
             <div>
             <br></br><br></br><br></br>
-                <button onClick={() => postAns("emailTrue", "", currData, setCurrData)}>
+                <button onClick={() => postAns("emailFalse", "", currData, setCurrData)}>
                     Done with session
                 </button>
             </div>
