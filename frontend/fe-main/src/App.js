@@ -1,31 +1,27 @@
 import { useEffect, useState } from 'react'
-import { getAndSetData, postAns } from "./appUtils.js"
+import { GeneralSolution, GeneralQuestion } from './components.js'
+import { getAndSetData } from "./appUtils.js"
 
 function App() {
 
   const [currData, setCurrData] = useState({
-    "Question": "",
+    "Prompt type": "Question", // Defaults to a (blank) general question.
+    "Text": "",
     "Responses": {}
   })
+  const promptsDict = {
+    "Question": GeneralQuestion,
+    "Solution": GeneralSolution,
+  }
 
   useEffect(() => {
     getAndSetData(setCurrData)
   }, [])
 
-
+  const CurrPrompt = promptsDict[currData["Prompt type"]]
+  const props = {currData: currData, setCurrData: setCurrData}
   return (
-    <div className='app'>
-      <div className='question-section'>
-        <div className='question-text'>{currData.Question}</div>
-      </div>
-      <div className='answer-section'>
-        {Object.keys(currData.Responses).map((respKey) => (
-          <button key={respKey} onClick={() => postAns(respKey, currData.Responses[respKey], currData, setCurrData)}>
-            {currData.Responses[respKey]}
-          </button>
-        ))}
-      </div>
-    </div>
+    <CurrPrompt {...props} />
   )
 }
 

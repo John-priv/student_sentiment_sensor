@@ -20,7 +20,7 @@ export const getAndSetData = (setCurrData) => {
  */
 export const postAns = (respKey, respTxt, currData, setCurrData) => {
     const qAns = {
-        "Question": currData.Question,
+        "Question": currData.Text,
         "Selected_Response": {}
     }
     qAns["Selected_Response"][respKey] = respTxt
