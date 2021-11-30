@@ -18,13 +18,6 @@ export const GeneralSolution = (props) => {
                     ))}
                 </ul>
             </div>
-            <div className='email-entry-section'>
-                <form>
-                    <label for="email-entry">If you would like to be sent these resources, feel free to enter your email:</label>
-                    <input type="text" id="email-entry" name="email-entry"></input>
-                    <input type="submit" value="Submit"></input>
-                </form>
-            </div>
         </div>
     )
 }
