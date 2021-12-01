@@ -1,11 +1,17 @@
+from datetime import datetime
 import csv
 import os
 import sys
 import prompts
 import backendIO
 import email_helper
-import cv
-from datetime import datetime
+is_cv = True
+try:
+    import cv
+except ModuleNotFoundError:
+    is_cv = False
+    import random
+    pass
 
 
 def load_spreadsheet(spreadsheet, prompt_type):
@@ -63,7 +69,8 @@ def main():
     solution_prompt_filename = 'decision_tree/solution_prompts.csv'
     info_listing_prompt_filename = 'decision_tree/info_listing_prompts.csv'
 
-    camera = cv.init_cam()
+    if is_cv:
+        camera = cv.init_cam()
 
     if len(sys.argv) >= 3:
         question_prompt_filename = sys.argv[1]
@@ -90,8 +97,10 @@ def main():
             backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
             emotion = ''
             while emotion not in ['sad', 'fear', 'angry']:
-                emotion = cv.get_emotion(camera)[0]
-                print('Emotion: {}'.format(emotion))
+                if is_cv:
+                    emotion = cv.get_emotion(camera)[0]
+                else:
+                    emotion = random.choice(['sad', 'fear', 'angry'])
             if emotion == 'angry':
                 prompt_id = '8'
             if emotion == 'fear':
