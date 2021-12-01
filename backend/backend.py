@@ -82,6 +82,12 @@ def main():
 
     while True:
         if prompt_id == '0':
+            prompt_id = '7'
+            open_prompt = question_prompts[prompt_id]
+            # Truncate time down to the centisecond
+            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
+            # print(backendIO.toJSON(open_prompt, response_prompts))
+            backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
             emotion = ''
             while emotion not in ['sad', 'fear', 'angry']:
                 emotion = cv.get_emotion(camera)[0]
