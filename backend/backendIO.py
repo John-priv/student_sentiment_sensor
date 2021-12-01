@@ -18,7 +18,7 @@ def fromJSON(response_json, qp_dict):
     json_dict = json.loads(response_json)
     question_id = list(json_dict["selectedResponse"].keys())[0]
     if question_id in qp_dict.keys():
-        return qp_dict[question_id]
+        return question_id, qp_dict[question_id]
     elif question_id in ['emailTrue', 'emailFalse']:
         return question_id, json_dict["selectedResponse"][question_id]
 
@@ -34,6 +34,13 @@ def send_question_to_frontend(qp, rp_dict, time):
 def send_solution_to_frontend(qp, ilp_dict, time):
     write_text = solutionToJSON(qp, ilp_dict)
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/question_messages/" + time + ".json"))
+    write_file = open(file_path, "w")
+    write_file.write(write_text)
+    write_file.close()
+
+def store_conversation(convo, time):
+    write_text = json.dumps(convo, indent=4)
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/conversations/" + time + ".json"))
     write_file = open(file_path, "w")
     write_file.write(write_text)
     write_file.close()

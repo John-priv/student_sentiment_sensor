@@ -73,6 +73,10 @@ def main():
 
     prompt_id = '10'
 
+    conversation = []
+
+    conversation.append(('Emotion', 'Null'))
+
     while True:
         if prompt_id in question_prompts.keys():
             open_prompt = question_prompts[prompt_id]
@@ -83,7 +87,9 @@ def main():
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
 
-            response = backendIO.read_from_frontend(time, response_prompts)
+            response_id, response = backendIO.read_from_frontend(time, response_prompts)
+
+            conversation.append((prompt_id, response_id))
 
             prompt_id = response.get_question_id()
 
@@ -99,6 +105,13 @@ def main():
             email_status, email_address = backendIO.read_from_frontend(time, response_prompts)
 
             rsolution = email_helper.solutionToRichSolution(open_prompt, info_listing_prompts)
+
+            conversation.append((prompt_id, email_status))
+
+            backendIO.store_conversation(conversation, time)
+
+            conversation = []
+            conversation.append(('Emotion', 'Null'))
 
             if email_status == 'emailTrue':
                 email_helper.email_solutions(email_address, rsolution)

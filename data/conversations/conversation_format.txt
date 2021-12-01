@@ -1,0 +1,26 @@
+[
+    [
+        "Emotion",
+        emotion
+    ],
+    [
+        question_id1,
+        response_id1
+    ],
+    [
+        question_id1,
+        response_id1
+    ],
+    [
+        question_id1,
+        response_id1
+    ],
+    [
+        question_id1,
+        response_id1
+    ],
+    [
+        solution_id,
+        email_status
+    ]
+]
