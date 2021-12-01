@@ -98,6 +98,15 @@ def main():
                 prompt_id = '9'
             if emotion == 'sad':
                 prompt_id = '10'
+
+            open_prompt = question_prompts[prompt_id]
+
+            # Truncate time down to the centisecond
+            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
+
+            # print(backendIO.toJSON(open_prompt, response_prompts))
+            backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
+
         if prompt_id == '2400':
             backendIO.store_conversation(conversation, time)
             conversation = []
