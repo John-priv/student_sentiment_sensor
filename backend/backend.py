@@ -5,12 +5,9 @@ import sys
 import prompts
 import backendIO
 import email_helper
-is_cv = True
 try:
     import cv
 except ModuleNotFoundError:
-    is_cv = False
-    import random
     pass
 
 
@@ -69,8 +66,15 @@ def main():
     solution_prompt_filename = 'decision_tree/solution_prompts.csv'
     info_listing_prompt_filename = 'decision_tree/info_listing_prompts.csv'
 
+    is_cv = True
+
     if is_cv:
-        camera = cv.init_cam()
+        try:
+            camera = cv.init_cam()
+        except Exception:
+            is_cv = False
+            import random
+            pass
 
     if len(sys.argv) >= 3:
         question_prompt_filename = sys.argv[1]
