@@ -21,7 +21,7 @@ def load_spreadsheet(spreadsheet, prompt_type):
     '''
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), spreadsheet))
     prompt_dict = {}
-    with open(file_path, 'r') as opened_file:
+    with open(file_path, 'r', encoding='utf-8') as opened_file:
         csv_file = csv.reader(opened_file)
         next(csv_file)  # Skips header line
         for row in csv_file:
@@ -107,8 +107,7 @@ def main():
         else:
             print('Bad prompt ID')
 
-        
-        ########### OLD CODE: CLI backend setup
+        # OLD CODE: CLI backend setup
         # response_id_list = open_prompt.get_response_ids()
         # print(open_prompt.get_text())
         # for response in response_id_list:
