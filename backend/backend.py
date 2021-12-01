@@ -7,7 +7,7 @@ import backendIO
 import email_helper
 try:
     import cv
-except ModuleNotFoundError:
+except Exception:
     pass
 
 
