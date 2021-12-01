@@ -26,10 +26,11 @@ Response ID,Text,Follow-up Question ID or Solution ID
 180,Trouble making friends,1800
 181,Unsure where to get information on  opportunities to meet people?,1810
 182,Touble Handling Interpersonal Conflicts,19
+183,Unsure What To Do or Where To Go With Friends? ,1830
 190,Family,1900
 191,Friends,1910
 192,Roommate,1920
-193,Job/Coop,1930
+193,Workplace,1930
 200,Budgeting,21
 201,Financial Aid,22
 202,On-Campus Job Opportunities,2020
@@ -38,12 +39,17 @@ Response ID,Text,Follow-up Question ID or Solution ID
 212,Current budgeting method isn't effective. Need pointers,2120
 220,Confused About Deadlines,2200
 221,Confused where to go to find Financial Information,2210
-222,,
-223,,
-224,,
-225,,
-226,,
-227,,
-228,,
-229,,
-230,,
+230,YES,24
+231,NO,24
+240,Sad,2400
+241,Frustrated,2400
+242,Afraid,2400
+243,Fearful,2400
+244,Angry,2400
+245,Annoyed,2400
+246,Excited,2400
+247,Happy,2400
+248,Relaxed,2400
+249,Tired,2400
+250,Bored,2400
+251,Gloomy,2400

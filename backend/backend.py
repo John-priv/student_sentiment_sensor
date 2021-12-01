@@ -78,6 +78,11 @@ def main():
     conversation.append(('Emotion', 'Null'))
 
     while True:
+        if prompt_id == '2400':
+            backendIO.store_conversation(conversation, time)
+            conversation = []
+            conversation.append(('Emotion', 'Null'))
+            prompt_id = '10'
         if prompt_id in question_prompts.keys():
             open_prompt = question_prompts[prompt_id]
 
@@ -108,17 +113,14 @@ def main():
 
             conversation.append((prompt_id, email_status))
 
-            backendIO.store_conversation(conversation, time)
 
-            conversation = []
-            conversation.append(('Emotion', 'Null'))
 
             if email_status == 'emailTrue':
                 email_helper.email_solutions(email_address, rsolution)
 
-            prompt_id = '10'
+            prompt_id = '23'
         else:
-            print('Bad prompt ID')
+            print('Bad prompt ID: {}'.format(prompt_id))
 
         # OLD CODE: CLI backend setup
         # response_id_list = open_prompt.get_response_ids()
