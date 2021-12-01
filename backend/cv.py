@@ -65,7 +65,7 @@ def get_emotion(camera):
     cv2.imwrite("/home/pi/fer-21.0.5/tests/sample.jpg", image)
 
     img=Image.open("/home/pi/fer-21.0.5/tests/sample.jpg")
-    img.show() #use for testing purposes, displays imgage w box
+    #img.show() #use for testing purposes, displays imgage w box
     #delete "user data" at end of execution
     os.remove("/home/pi/fer-21.0.5/tests/sample.jpg")
         
