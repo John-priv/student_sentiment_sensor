@@ -73,7 +73,16 @@ def main():
 
     prompt_id = '10'
 
+    conversation = []
+
+    conversation.append(('Emotion', 'Null'))
+
     while True:
+        if prompt_id == '2400':
+            backendIO.store_conversation(conversation, time)
+            conversation = []
+            conversation.append(('Emotion', 'Null'))
+            prompt_id = '10'
         if prompt_id in question_prompts.keys():
             open_prompt = question_prompts[prompt_id]
 
@@ -83,7 +92,9 @@ def main():
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
 
-            response = backendIO.read_from_frontend(time, response_prompts)
+            response_id, response = backendIO.read_from_frontend(time, response_prompts)
+
+            conversation.append((prompt_id, response_id))
 
             prompt_id = response.get_question_id()
 
@@ -100,15 +111,16 @@ def main():
 
             rsolution = email_helper.solutionToRichSolution(open_prompt, info_listing_prompts)
 
+            conversation.append((prompt_id, email_status))
+
             if email_status == 'emailTrue':
                 email_helper.email_solutions(email_address, rsolution)
 
-            prompt_id = '10'
+            prompt_id = '23'
         else:
-            print('Bad prompt ID')
+            print('Bad prompt ID: {}'.format(prompt_id))
 
-        
-        ########### OLD CODE: CLI backend setup
+        # OLD CODE: CLI backend setup
         # response_id_list = open_prompt.get_response_ids()
         # print(open_prompt.get_text())
         # for response in response_id_list:
