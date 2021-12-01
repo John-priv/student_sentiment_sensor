@@ -21,7 +21,7 @@ def load_spreadsheet(spreadsheet, prompt_type):
     '''
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), spreadsheet))
     prompt_dict = {}
-    with open(file_path, 'r', encoding='utf-8') as opened_file:
+    with open(file_path, 'r') as opened_file:
         csv_file = csv.reader(opened_file)
         next(csv_file)  # Skips header line
         for row in csv_file:
@@ -112,8 +112,6 @@ def main():
             rsolution = email_helper.solutionToRichSolution(open_prompt, info_listing_prompts)
 
             conversation.append((prompt_id, email_status))
-
-
 
             if email_status == 'emailTrue':
                 email_helper.email_solutions(email_address, rsolution)
