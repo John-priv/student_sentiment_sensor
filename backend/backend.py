@@ -4,6 +4,7 @@ import sys
 import prompts
 import backendIO
 import email_helper
+import cv
 from datetime import datetime
 
 
@@ -62,6 +63,8 @@ def main():
     solution_prompt_filename = 'decision_tree/solution_prompts.csv'
     info_listing_prompt_filename = 'decision_tree/info_listing_prompts.csv'
 
+    camera = cv.init_cam()
+
     if len(sys.argv) >= 3:
         question_prompt_filename = sys.argv[1]
         response_prompt_filename = sys.argv[2]
@@ -71,19 +74,30 @@ def main():
     solution_prompts = load_spreadsheet('../data/' + solution_prompt_filename, 'solution')
     info_listing_prompts = load_spreadsheet('../data/' + info_listing_prompt_filename, 'info_listing')
 
-    prompt_id = '10'
+    prompt_id = '0'
 
     conversation = []
 
     conversation.append(('Emotion', 'Null'))
 
     while True:
+        if prompt_id == '0':
+            emotion = ''
+            while emotion not in ['sad', 'fear', 'angry']:
+                emotion = cv.get_emotion(camera)[0]
+                print('Emotion: {}'.format(emotion))
+            if emotion == 'angry':
+                prompt_id = '8'
+            if emotion == 'fear':
+                prompt_id = '9'
+            if emotion == 'sad':
+                prompt_id = '10'
         if prompt_id == '2400':
             backendIO.store_conversation(conversation, time)
             conversation = []
             conversation.append(('Emotion', 'Null'))
-            prompt_id = '10'
-        if prompt_id in question_prompts.keys():
+            prompt_id = '0'
+        elif prompt_id in question_prompts.keys():
             open_prompt = question_prompts[prompt_id]
 
             # Truncate time down to the centisecond
