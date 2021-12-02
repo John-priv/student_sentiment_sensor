@@ -74,9 +74,9 @@ button {
   font-size: 3vmin;
   color: #ffffff;
   background-color: #252d4a;
-  border-radius: 15px;
+  border-radius: 25px;
   display: flex;
-  padding: 5px;
+  padding: 15px;
   justify-content: flex-start;
   align-items: center;
   border: 5px solid #234668;
