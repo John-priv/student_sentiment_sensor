@@ -23,9 +23,13 @@ class response_prompt:
 
 
 class solutions_prompt:
-    def __init__(self, text, info_listing_ids):
+    def __init__(self, text, emotion_approx, info_listing_ids):
         self.text = text
+        self.emotion_approx = emotion_approx
         self.info_listing_ids = list(filter(None, info_listing_ids))
+
+    def get_emotion_approx(self):
+        return self.emotion_approx
 
     def get_text(self):
         return self.text
