@@ -44,7 +44,7 @@ export const GeneralSolution = (props) => {
                 <form name="email-form">
                     <br></br><br></br><br></br>
                     <label htmlFor="email-entry" style={{ "fontSize": "3vmin", "color": "#000000"}}>If you would like to be sent these resources, feel free to enter your email:</label><br></br><br></br>
-                    <input type="email" name="email-entry" placeholder="Email address" style={{ "justifyContent": "center", "color": "rgb(0, 0, 0),", "fontSize": "3vmin"}}></input>
+                    <input type="email" name="email-entry" placeholder="Email address" style={{ "justifyContent": "center", "fontSize": "3vmin", "color": "#000000",}}></input>
                     <input type="submit" value="Submit" onClick={() => postAns("emailTrue", document.forms['email-form'].elements[0].value, currData, setCurrData)} style={{ "color": "rgb(0, 0, 0)", "fontSize": "3vmin" }}></input>
                 </form>
             </div>
