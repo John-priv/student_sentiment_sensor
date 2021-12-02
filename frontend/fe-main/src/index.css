@@ -8,7 +8,7 @@ body {
 }
 
 * {
-  font-family: "Verdana", cursive, sans-serif;
+  font-family: Cambria, Georgia, serif;
   color: #ffffff;
 }
 
@@ -20,19 +20,29 @@ body {
   min-height: 100vh;
 }
 
-.app {
+.screen-top {
   background-color: #3a7fff;
   width: 90vw;
   /* min-height: 90vh; */
-  height: 90vh;
-  border-radius: 15px;
+  min-height: 10vh;
+  border-radius: 25px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
 }
 
-/* QUESTION/TIMER/LEFT SECTION */
+.screen-top {
+  margin-top: 25px;
+  background-color: #006d2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vmin;
+  color: white;
+}
+
 .question-section, .text-section {
   width: 100%;
   position: relative;
@@ -52,7 +62,6 @@ body {
   text-align: center;
 }
 
-/* ANSWERS/RIGHT SECTION */
 .answer-section, .info-listings-section {
   width: 100%;
   display: flex;
@@ -61,8 +70,8 @@ body {
 }
 
 button {
-  width: 50%;
-  font-size: 16px;
+  min-width: 15%;
+  font-size: 3vmin;
   color: #ffffff;
   background-color: #252d4a;
   border-radius: 15px;

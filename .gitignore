@@ -1,5 +1,7 @@
 .vscode
+data/conversations/*
 data/question_messages/*
 data/response_messages/*
 node_modules
+backend/__pycache__/*
 source/__pycache__
