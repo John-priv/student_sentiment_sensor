@@ -7,8 +7,9 @@ by Jack Carson, Tyler Ceballo, Mark Morton, Dave Pleteau, & John Privitera
 
 ## Prerequisites
 - Python3 is installed.
-- Node.js is installed
+- Node.js is installed (Version < 17.0)
   - Note: Do not install node via a package manager like Debian's `apt`. Consider using `nvm`.
+  - Note: "sudo apt-get install node npm" may work/be a potential fix
 - *A Linux-type environment works best.*
 
 ## Setup
@@ -31,7 +32,7 @@ First, navigate to the project root directory.
 ```bash
 cd ./backend/
 # `python3` may be substituted for `python` if necessary.
-python backend.py
+python3 backend.py
 ```
 
 Second, open a new terminal and navigate to the project root directory.
