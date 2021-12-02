@@ -7,7 +7,7 @@ import backendIO
 import email_helper
 try:
     import cv
-except ModuleNotFoundError:
+except Exception:
     pass
 
 
@@ -39,8 +39,9 @@ def load_spreadsheet(spreadsheet, prompt_type):
                     question_id = row[2]
                     prompt_dict[prompt_id] = prompts.response_prompt(text, question_id)
                 if prompt_type == 'solution':
-                    info_listing_ids = row[2:]
-                    prompt_dict[prompt_id] = prompts.solutions_prompt(text, info_listing_ids)
+                    emotion_approx = row[2]
+                    info_listing_ids = row[3:]
+                    prompt_dict[prompt_id] = prompts.solutions_prompt(text, emotion_approx, info_listing_ids)
                 if prompt_type == 'info_listing':
                     link = row[2]
                     prompt_dict[prompt_id] = prompts.info_listing_prompt(text, link)
@@ -93,6 +94,8 @@ def main():
 
     while True:
         if prompt_id == '0':
+            prompt_id = '6'
+        elif prompt_id == '998':
             prompt_id = '7'
             open_prompt = question_prompts[prompt_id]
             # Truncate time down to the centisecond
