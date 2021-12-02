@@ -1,5 +1,5 @@
 Quesiton ID,Text,Response ID 1,Response ID 2,Response ID 3,Response ID 4,Response ID 5,Response ID 6,Response ID 7,Response ID 8,Response ID 9,Response ID 10,Response ID 11,Response ID 12
-7,Scanning...,100,101,,,,,,,,,,
+7,We're currently scanning your face....,1,,,,,,,,,,,
 8,"We've noticed you may be feeling angry, is there anything bothering you today?",100,101,,,,,,,,,,
 9,"We've noticed you may be feeling fearful, is there anything bothering you today?",100,101,,,,,,,,,,
 10,"We've noticed you may be feeling sad, is there anything bothering you today?",100,101,,,,,,,,,,
