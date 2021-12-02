@@ -94,6 +94,8 @@ def main():
 
     while True:
         if prompt_id == '0':
+            prompt_id = '6'
+        elif prompt_id == '998':
             prompt_id = '7'
             open_prompt = question_prompts[prompt_id]
             # Truncate time down to the centisecond
