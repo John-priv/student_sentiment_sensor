@@ -62,7 +62,7 @@ def store_interaction(convo, emotion, u_id):
         for element in line:
             write_text = write_text + (str(element)) + ','  # separate elements by comma
         write_text = write_text[:-1] + '\n'                 # trim off trailing comma, add newline
-    write_text = write_text + 'Emotion,' + emotion                       # end file with emotion
+    write_text = write_text + 'Emotion_CV,' + emotion       # end file with emotion
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/stored_user_data/" + u_id + ".dat"))
     write_file = open(file_path, "w")
     write_file.write(write_text)
