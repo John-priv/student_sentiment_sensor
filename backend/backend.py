@@ -5,6 +5,7 @@ import sys
 import prompts
 import backendIO
 import email_helper
+import time as timelib
 try:
     import cv
 except Exception:
@@ -95,6 +96,8 @@ def main():
     while True:
         if prompt_id == '0':
             prompt_id = '6'
+        elif prompt_id == '999':
+            timelib.sleep(0.05)
         elif prompt_id == '998':
             prompt_id = '7'
             open_prompt = question_prompts[prompt_id]
@@ -107,7 +110,9 @@ def main():
                 if is_cv:
                     emotion = cv.get_emotion(camera)[0]
                 else:
+                    timelib.sleep(5)
                     emotion = random.choice(['sad', 'fear', 'angry'])
+
             if emotion == 'angry':
                 prompt_id = '8'
             if emotion == 'fear':
