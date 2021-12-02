@@ -55,6 +55,10 @@ def store_interaction(convo, emotion, u_id):
     '''
     Stores interaction as a newline separated path of [question_id, question_text, response_id, response_text]
         - NOTE: I realize that I accidentally made a worse version of a csv. Keeping for now
+        - Check the first element for line type:
+            "Question": [question_id, question_text, response_id, response_text]
+            "Solution": [solution_id, solution_text, emotion_approx]
+            "Emotion_CV": 'emotion'     # The detecte emotion
     '''
     # write_text = json.dumps(convo, indent=4)
     write_text = ''
