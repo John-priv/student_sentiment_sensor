@@ -75,6 +75,7 @@ def main():
             camera = cv.init_cam()
         except Exception:
             is_cv = False
+            print('Disabled camera, is_cv = {}'.format(is_cv))
             import random
             pass
 
