@@ -3,18 +3,22 @@ import json
 import os
 import time
 
+
 def questionToJSON(qp, rp_dict):
     question_text = qp.get_text()
     responses = {key: rp_dict[key].get_text() for key in qp.get_response_ids()}
     return json.dumps({"Prompt type": "Question", "Text": question_text, "Responses": responses}, sort_keys=True, indent=4)
 
+
 def solutionToJSON(sp, ilp_dict):
     solution_text = sp.get_text()
-    info_listings = {key: {'Text': ilp_dict[key].get_text(), 'Link': ilp_dict[key].get_info_link()} for key in sp.get_info_listing_ids()}
+    info_listings = {key: {'Text': ilp_dict[key].get_text(), 'Link': ilp_dict[key].get_info_link()}
+                     for key in sp.get_info_listing_ids()}
     return json.dumps({"Prompt type": "Solution", "Text": solution_text, "Info Listings": info_listings})
 
-#TODO - discuss what this function should return
+
 def fromJSON(response_json, qp_dict):
+    # TODO - discuss what this function should return
     json_dict = json.loads(response_json)
     question_id = list(json_dict["selectedResponse"].keys())[0]
     if question_id in qp_dict.keys():
@@ -38,9 +42,28 @@ def send_solution_to_frontend(qp, ilp_dict, time):
     write_file.write(write_text)
     write_file.close()
 
+
 def store_conversation(convo, time):
     write_text = json.dumps(convo, indent=4)
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/conversations/" + time + ".json"))
+    write_file = open(file_path, "w")
+    write_file.write(write_text)
+    write_file.close()
+
+
+def store_interaction(convo, emotion, u_id):
+    '''
+    Stores interaction as a newline separated path of [question_id, question_text, response_id, response_text]
+        - NOTE: I realize that I accidentally made a worse version of a csv. Keeping for now
+    '''
+    # write_text = json.dumps(convo, indent=4)
+    write_text = ''
+    for line in convo:
+        for element in line:
+            write_text = write_text + (str(element)) + ','  # separate elements by comma
+        write_text = write_text[:-1] + '\n'                 # trim off trailing comma, add newline
+    write_text = write_text + 'Emotion,' + emotion                       # end file with emotion
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/stored_user_data/" + u_id + ".dat"))
     write_file = open(file_path, "w")
     write_file.write(write_text)
     write_file.close()

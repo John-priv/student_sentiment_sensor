@@ -58,6 +58,25 @@ def get_response_texts(response_id_list, response_prompts_dict):
     return response_texts
 
 
+def get_current_u_id():
+    '''
+    Gets u_id from student_sentiment_sensor/data/stored_user_data
+        - u_id is used to track runs. Used to create log data in "u_id.dat" files
+
+    Outputs:
+        u_id (int): highest u_id currently stored in student_sentiment_sensor/data/stored_user_data/"u_id.dat"
+    '''
+    interaction_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/stored_user_data/"))
+    interaction_files = [f for f in os.listdir(interaction_dir) if os.path.isfile(os.path.join(interaction_dir, f))]
+    try:
+        interaction_files.sort(reverse=True)
+        u_id = int(interaction_files[0].split('.')[0])  # Gets largest file_id
+    except Exception as e:
+        print('Could not get u_id, returning u_id = 0: {}'.format(e))
+        u_id = 0
+    return u_id
+
+
 def main():
     '''
     ARGS: backend.py QUESTION_PROMPT_NAME RESPONSE_PROMPT_NAME
@@ -91,16 +110,19 @@ def main():
     prompt_id = '0'
 
     conversation = []
+    interactions = []
 
     conversation.append(('Emotion', 'Null'))
 
     while True:
         if prompt_id == '0':
+            interactions = []
+            u_id = get_current_u_id() + 1
             prompt_id = '6'
         elif prompt_id == '7':
             open_prompt = question_prompts[prompt_id]
             # Truncate time down to the centisecond
-            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
+            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0: -4]
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
             emotion = ''
@@ -120,12 +142,13 @@ def main():
 
             open_prompt = question_prompts[prompt_id]
             # Truncate time down to the centisecond
-            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
+            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0: -4]
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
             timelib.sleep(0.5)
         elif prompt_id == '2400':
             backendIO.store_conversation(conversation, time)
+            backendIO.store_interaction(interactions, emotion, str(u_id))
             conversation = []
             conversation.append(('Emotion', 'Null'))
             prompt_id = '0'
@@ -133,7 +156,7 @@ def main():
             open_prompt = question_prompts[prompt_id]
 
             # Truncate time down to the centisecond
-            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
+            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0: -4]
 
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_question_to_frontend(open_prompt, response_prompts, time)
@@ -141,6 +164,7 @@ def main():
             response_id, response = backendIO.read_from_frontend(time, response_prompts)
 
             conversation.append((prompt_id, response_id))
+            interactions.append(['Question', prompt_id, open_prompt.get_text(), response_id, response.get_text()])
 
             prompt_id = response.get_question_id()
 
@@ -148,7 +172,7 @@ def main():
             open_prompt = solution_prompts[prompt_id]
 
             # Truncate time down to the centisecond
-            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0:-4]
+            time = datetime.now().strftime("%Y%m%d%H%M%S%f")[0: -4]
 
             # print(backendIO.toJSON(open_prompt, response_prompts))
             backendIO.send_solution_to_frontend(open_prompt, info_listing_prompts, time)
@@ -158,6 +182,7 @@ def main():
             rsolution = email_helper.solutionToRichSolution(open_prompt, info_listing_prompts)
 
             conversation.append((prompt_id, email_status))
+            interactions.append(['Solution', prompt_id, open_prompt.get_text(), open_prompt.get_emotion_approx()])
 
             if email_status == 'emailTrue':
                 email_helper.email_solutions(email_address, rsolution)
