@@ -6,27 +6,27 @@ Response ID,Text,Follow-up Question ID or Solution ID
 110,Academic,12
 111,Social,18
 112,Financial,21
-120,Passing & preparing for assesments,13
+120,Passing and preparing for assessments,13
 121,Meeting deadlines,14
 122,Help with class logistics,15
 123,Developing time management skills,16
 124,Help with job/co-op search,17
 130,Trouble dealing with test anxiety,1300
 131,Unsure how to effectively study,1310
-132,Consistently doing poorly on assesments,1320
-133,Struggling to understand class material,1330
+132,Consistently doing poorly on assessments,1320
+133,Struggling to understand the class material,1330
 140,Feeling burnout,1400
 141,Struggling with time management,16
 150,Unsure about important dates of the semester,1500
 151,How to effectively prepare for class registration,1510
 160,Don't know where to begin developing time managing skills,1600
-161,My time manageming method is ineffective or inconsistent,1610
+161,My time management method is ineffective or inconsistent,1610
 170,Unsure how to prepare for job/coop search,1700
-171,Coping with poor success w/ job search,1710
+171,Coping with poor success with job searching ,1710
 172,Afraid of not landing a job,1720
 180,Trouble making friends,1800
 181,Unsure where to get information on opportunities to meet people?,1810
-182,Touble handling interpersonal conflicts,19
+182,Trouble handling interpersonal conflicts,19
 183,Unsure what to do or where to go with friends?,1830
 190,Family,1900
 191,Friends,1910
@@ -37,20 +37,19 @@ Response ID,Text,Follow-up Question ID or Solution ID
 202,On-campus job opportunities,2020
 210,Confused where to start,2100
 211,Need help creating & managing your budget,2110
-212,Current budgeting method isn't effective. Need pointers,2120
+212,Current budgeting method isn't effective,2120
 220,Confused about deadlines,2200
-221,Confused where to go to find financial information,2210
+221,Confused about where to go to find financial information,2210
 230,Yes,24
 231,No,24
 240,Sad,2400
 241,Frustrated,2400
 242,Afraid,2400
-243,Fearful,2400
-244,Angry,2400
-245,Annoyed,2400
-246,Excited,2400
-247,Happy,2400
-248,Relaxed,2400
-249,Tired,2400
-250,Bored,2400
-251,Gloomy,2400
+243,Angry,2400
+244,Annoyed,2400
+245,Excited,2400
+246,Happy,2400
+247,Relaxed,2400
+248,Tired,2400
+249,Bored,2400
+250,Gloomy,2400

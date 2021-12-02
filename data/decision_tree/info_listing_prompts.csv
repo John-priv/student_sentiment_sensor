@@ -1,80 +1,71 @@
 Info Listing ID,Text,Link
-13000,Steps to Deal With Test Anxiety ,https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/expert-answers/test-anxiety/faq-20058195
-13001,Managing Test Anxiety,https://www.brown.edu/campus-life/support/counseling-and-psychological-services/managing-test-anxiety
-13002,Test Anxiety Tips,https://medicine.llu.edu/academics/resources/test-anxiety-tips
-13100,5 Steps to Study Success,https://au.reachout.com/articles/5-steps-to-study-success
-13101,12 Steps to Effective Studying,https://www.cuesta.edu/student/resources/ssc/study_guides/study_skills/503_study_steps.html
-13200,20 Reasons Why Students Fail and Solutions,https://explicitsuccess.com/reasons-why-students-fail/
-13300,Go to office hours! Don’t be afraid to go to your professor and express your difficulty following the material presented in class,
-13301,"The Internet is Your Friend: If lectures or office hours are ineffective, try looking for different explanations on YouTube or Google",
-13302,"Learn Difficult
-Concepts with the ADEPT method",https://betterexplained.com/articles/adept-method/
-13303,"Learn
-Concepts Using The Feynman Technique",https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching
-13304,"Guide
-to reading a textbook",https://www.cuesta.edu/student/resources/ssc/study_guides/reading_comp/305_read_text.html
-14000,Burnout Recovery: 11 Strategies to Help You Reset,https://www.healthline.com/health/mental-health/burnout-recovery
-14001,Burnout Prevention and Treatment,https://www.helpguide.org/articles/stress/burnout-prevention-and-recovery.htm
-15000,Current Academic Calendar,https://registrar.northeastern.edu/article/calendar-current-year/
-15100,"Review
-the Registrar’s very own Registration Overview webpage to learn of what steps
-to take prior, during, and after registration",https://registrar.northeastern.edu/article/registration-overview/
-15101,Reach out to academic advisor to create a course plan detailing all the classes you will take for each semester at NEU,
-15102,"Use the
-class evaluations (TRACE) to get a clearer idea on the workload of the class
-and the best professor teaching it",https://registrar.northeastern.edu/article/class-evaluations-trace/
-15103,Check out (or ask on) the NU/Reddit page for additional student reviews of classes and professors ,https://www.reddit.com/r/NEU/
-15104,Check out the registrar’s Registering for Classes webpage for guidance on how to use the “plan” feature of Banner,https://registrar.northeastern.edu/article/new-registration-experience/
-15105,"For a complete understanding of all the class logistics, check out the registrar’s Registration & Classes webpage",https://registrar.northeastern.edu/group/registration-classes/
-16000,"Before
-considering which tools to use, a grasp on the skills necessary to start
-developing to facilitate your time management and organizational skills",https://clockify.me/blog/productivity/improve-time-management-skills/
-16001,"Create and maintain a to-do list and calendar to track tasks, events, appointments, etc. To prevent burning yourself out, try starting of small: Perhaps you only track down class assignments on your to-do list and appointments on your calendar.",
-16002,Here are some digital apps that you can use to help you track and organize your time and tasks,https://www.lifehack.org/articles/technology/top-15-time-management-apps-and-tools.html
-16003,"For a more fundamental understanding of time management as a skill, check out this article reviewing the mindset you need to embody to be successful at time management.",https://hbr.org/2020/01/time-management-is-about-more-than-life-hacks
-16100,Improve Time management skills with these 10 steps,https://clockify.me/blog/productivity/improve-time-management-skills/
-16101,Common Time management mistakes,https://www.mindtools.com/pages/article/time-management-mistakes.htm
-17000,Job Hunting Tips,https://www.indeed.com/career-advice/finding-a-job/job-hunting-tips
-17001,Resume Building Tips,https://www.indeed.com/career-advice/resumes-cover-letters/resume-format-guide-with-examples
-17002,Career Portfolio Guide,https://umanitoba.ca/faculties/management/programs/undergraduate/coop/media/student-career-portfolio-guide.pdf
-17003,NEU Job Search Resource Page,https://careers.northeastern.edu/group/job-search/
-17004,Coping with failure not securing a job right after college,https://www.indeed.com/career-advice/finding-a-job/can-not-find-a-job-after-college
-17005,18 Tips for Reducing Job Searching Anxiety,https://www.indeed.com/career-advice/finding-a-job/job-searching-anxiety
-18000,How to Make Friends in College: A Comprehensive Guide,https://collegeinfogeek.com/make-friends-college/
-18001,14 Ways To Make Friends at Work (And How To Do So Professionally),https://www.indeed.com/career-advice/career-development/how-to-make-friends-at-work
-18002,Six Mistakes to Avoid When Making Friends,https://www.psychologytoday.com/us/blog/casual-close/201712/six-mistakes-avoid-when-making-friends
-18100,Northeastern Calendar,http://calendar.northeastern.edu/
-18101,Sports Clubs,https://web.northeastern.edu/clubsports/
-18102,General Clubs,https://coe.northeastern.edu/academics-experiential-learning/co-op-experiential-learning/clubs-organizations/
-18103,Intramurals Info Session,https://www.northeastern.edu/campusrec/intramurals/
-18104,Intramurals Sign Up,https://www.imleagues.com/spa/account/login?redirecturl=https:%2F%2Fwww.imleagues.com%2Fspa%2Fmember%2Fplayer
-18105,GROUP FITNESS PROGRAM INFO PAGE,https://www.northeastern.edu/campusrec/groupfitness/
+13000,Steps to deal with test anxiety,https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/expert-answers/test-anxiety/faq-20058195
+13001,Managing test anxiety,https://www.brown.edu/campus-life/support/counseling-and-psychological-services/managing-test-anxiety
+13002,Test anxiety tips,https://medicine.llu.edu/academics/resources/test-anxiety-tips
+13100,5 steps to study success,https://au.reachout.com/articles/5-steps-to-study-success
+13101,12 steps to effective studying,https://www.cuesta.edu/student/resources/ssc/study_guides/study_skills/503_study_steps.html
+13200,20 reasons why students fail and solutions,https://explicitsuccess.com/reasons-why-students-fail/
+13300,Attend your professor’s office hours for help understanding the material,
+13301,"If lectures or office hours don't work, looking for alternative explanations on the web",
+13302,Learn difficult concepts with the ADEPT method,https://betterexplained.com/articles/adept-method/
+13303,Learn concepts using the Feynman Technique,https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching
+13304,Guide to reading a textbook,https://www.cuesta.edu/student/resources/ssc/study_guides/reading_comp/305_read_text.html
+14000,Burnout recovery: 11 strategies to help you reset,https://www.healthline.com/health/mental-health/burnout-recovery
+14001,Burnout prevention and treatment,https://www.helpguide.org/articles/stress/burnout-prevention-and-recovery.htm
+15000,Current academic calendar,https://registrar.northeastern.edu/article/calendar-current-year/
+15100,"Review NEU’s “Registration Overview” webpage to learn about the steps to take prior, during, and after registration",https://registrar.northeastern.edu/article/registration-overview/
+15101,Schedule an appointment with your academic advisor to create a plan of study ,
+15102,Use the class evaluations (TRACE) to get a clearer idea on the workload of the class and the best professor(s) teaching it.,https://registrar.northeastern.edu/article/class-evaluations-trace/
+15103,Check out the NU/Reddit page for additional student opinions on the classes and professors at NEU,https://www.reddit.com/r/NEU/
+15104,Review NEU’s “Registering for Classes” webpage for guidance on how to use the “plan” feature of Banner,https://registrar.northeastern.edu/article/new-registration-experience/
+15105,Visit the registrar’s “Registration & Classes” webpage for access to all information on all class logistics ,https://registrar.northeastern.edu/group/registration-classes/
+16000,Gain a grasp of the key skills necessary to facilitate time management,https://clockify.me/blog/productivity/improve-time-management-skills/
+16001,"Create and maintain a to-do list and calendar to track tasks, events, appointments, and so on ",
+16002,Here are some digital apps to help track and organize your time,https://www.lifehack.org/articles/technology/top-15-time-management-apps-and-tools.html
+16003,Check out this article discussing mindsets for success in time management ,https://hbr.org/2020/01/time-management-is-about-more-than-life-hacks
+16100,Improve time management skills with these 10 steps,https://clockify.me/blog/productivity/improve-time-management-skills/
+16101,Common time management mistakes,https://www.mindtools.com/pages/article/time-management-mistakes.htm
+17000,Job hunting tips,https://www.indeed.com/career-advice/finding-a-job/job-hunting-tips
+17001,Resume building tips,https://www.indeed.com/career-advice/resumes-cover-letters/resume-format-guide-with-examples
+17002,Career portfolio guide,https://umanitoba.ca/faculties/management/programs/undergraduate/coop/media/student-career-portfolio-guide.pdf
+17003,NEU job search resource page,https://careers.northeastern.edu/group/job-search/
+17004,Coping with failure to secure a post-graduation job,https://www.indeed.com/career-advice/finding-a-job/can-not-find-a-job-after-college
+17005,18 tips for reducing job searching anxiety,https://www.indeed.com/career-advice/finding-a-job/job-searching-anxiety
+18000,How to make friends in college: a comprehensive guide,https://collegeinfogeek.com/make-friends-college/
+18001,14 ways to make friends at work (and how to do so professionally),https://www.indeed.com/career-advice/career-development/how-to-make-friends-at-work
+18002,Six mistakes to avoid when making friends,https://www.psychologytoday.com/us/blog/casual-close/201712/six-mistakes-avoid-when-making-friends
+18100,Northeastern calendar,http://calendar.northeastern.edu/
+18101,Sports clubs,https://web.northeastern.edu/clubsports/
+18102,General clubs,https://coe.northeastern.edu/academics-experiential-learning/co-op-experiential-learning/clubs-organizations/
+18103,Intramurals info session,https://www.northeastern.edu/campusrec/intramurals/
+18104,Intramurals sign up,https://www.imleagues.com/spa/account/login?redirecturl=https:%2F%2Fwww.imleagues.com%2Fspa%2Fmember%2Fplayer
+18105,Group fitness program info page,https://www.northeastern.edu/campusrec/groupfitness/
 18106,Meetup,https://www.meetup.com/
-19000,Family Conflict,https://www.betterhealth.vic.gov.au/health/healthyliving/family-conflict
-19001,3 Steps to Resolving Conflict Within Your Family,https://www.psychologytoday.com/us/blog/turning-point/201506/3-steps-resolving-conflict-within-your-family
-19100,Confronting Conflict With Friends,https://www.psychologytoday.com/us/blog/lifetime-connections/201711/confronting-conflict-friends
-19101,9 Rules to Resolving Conflict With Friends,https://wendymillermeditation.medium.com/9-rules-to-resolving-conflict-with-friends-7391f8cb7dd5
-19200,Tips for Roommate Conflict Resolution,https://www.sparkadmissions.com/blog/tips-for-roommate-conflict-resolution/
-19201,HOW TO BE A GOOD ROOMMATE,https://news.northeastern.edu/2016/01/22/how-to-be-a-good-roommate/
-19202,Reach out to your RA if you live on campus,
-19300,How To Handle A Conflict With A Coworker,https://www.bustle.com/articles/103025-8-ways-to-handle-a-conflict-with-a-coworker
-19301,5 Keys of Dealing with Workplace Conflict,https://www.forbes.com/sites/mikemyatt/2012/02/22/5-keys-to-dealing-with-workplace-conflict/?sh=35e654d31e95
-18300,The 50 best things to do in Boston,https://www.timeout.com/boston/things-to-do/best-things-to-do-in-boston
-20200,Introduction to Budgeting,https://studentaid.gov/resources/prepare-for-college/students/budgeting
-20201,Not sure where to start in creating and managing your own budget?,https://studentaid.gov/resources/prepare-for-college/students/budgeting/creating-your-budget
-20202,7 Mistakes to Avoid When Budgeting in College,https://www.collegeavestudentloans.com/blog/7-mistakes-to-avoid-when-budgeting-in-college/
-21000,15 Common Money Mistakes College Students Make,https://collegecliffs.com/15-money-mistakes-college-students/
-21100,Never tried to live on a budget before?,https://studentaid.gov/resources/prepare-for-college/students/budgeting/budgeting-tips
-21200,How To Apply & Checklist (Undergraduate),https://studentfinance.northeastern.edu/applying-for-aid/undergraduate/how-to-apply/
-21201,How To Apply & Checklist (Graduate),https://studentfinance.northeastern.edu/applying-for-aid/graduate/how-to-apply/
-21202,How To Apply & Checklist (College of Professional Studies),https://studentfinance.northeastern.edu/applying-for-aid/college-of-professional-studies/
-22000,How To Apply & Checklist (International Students),https://studentfinance.northeastern.edu/applying-for-aid/international-students/
-22001,How To Apply & Checklist (School of Law),https://law.northeastern.edu/admissions/jd/financial-aid/
-22002,Undergraduate Financial Home Page,https://studentfinance.northeastern.edu/applying-for-aid/undergraduate/
-22003,Graduate Financial Home Page,https://studentfinance.northeastern.edu/applying-for-aid/graduate/
-22004,College of Professional Studies Financial Home Page,https://studentfinance.northeastern.edu/applying-for-aid/college-of-professional-studies/
-22100,International Students Financial Home Page,https://studentfinance.northeastern.edu/applying-for-aid/international-students/
-22101,School of Law Financial Home Page,https://law.northeastern.edu/admissions/jd/financial-aid/
-22102,New Student FAQ,https://studentemployment.neu.edu/cimages/New%20Student%20FAQ.pdf
-22103,Important Student Information,https://studentemployment.neu.edu/cmx_content.aspx?cpid=3
-22104,"The Office of Student Employment, Graduate Assistantships & Fellowships",https://studentemployment.neu.edu/Cmx_Content.aspx?cpId=10
+19000,Family conflict,https://www.betterhealth.vic.gov.au/health/healthyliving/family-conflict
+19001,3 steps to resolving conflict within your family,https://www.psychologytoday.com/us/blog/turning-point/201506/3-steps-resolving-conflict-within-your-family
+19100,Confronting conflict with friends,https://www.psychologytoday.com/us/blog/lifetime-connections/201711/confronting-conflict-friends
+19101,9 rules to resolving conflict with friends,https://wendymillermeditation.medium.com/9-rules-to-resolving-conflict-with-friends-7391f8cb7dd5
+19200,Tips for roommate conflict resolution,https://www.sparkadmissions.com/blog/tips-for-roommate-conflict-resolution/
+19201,How to be a good roommate,https://news.northeastern.edu/2016/01/22/how-to-be-a-good-roommate/
+19202,Reach out to your ra if you live on campus,
+19300,How to handle a conflict with a coworker,https://www.bustle.com/articles/103025-8-ways-to-handle-a-conflict-with-a-coworker
+19301,5 keys of dealing with workplace conflict,https://www.forbes.com/sites/mikemyatt/2012/02/22/5-keys-to-dealing-with-workplace-conflict/?sh=35e654d31e95
+18300,The 50 best things to do in boston,https://www.timeout.com/boston/things-to-do/best-things-to-do-in-boston
+20200,Introduction to budgeting,https://studentaid.gov/resources/prepare-for-college/students/budgeting
+20201,Creating and managing your budget,https://studentaid.gov/resources/prepare-for-college/students/budgeting/creating-your-budget
+20202,7 mistakes to avoid when budgeting in college,https://www.collegeavestudentloans.com/blog/7-mistakes-to-avoid-when-budgeting-in-college/
+21000,15 common money mistakes college students make,https://collegecliffs.com/15-money-mistakes-college-students/
+21100,Budgeting tips,https://studentaid.gov/resources/prepare-for-college/students/budgeting/budgeting-tips
+21200,How to apply & checklist (undergraduate),https://studentfinance.northeastern.edu/applying-for-aid/undergraduate/how-to-apply/
+21201,How to apply & checklist (graduate),https://studentfinance.northeastern.edu/applying-for-aid/graduate/how-to-apply/
+21202,How to apply & checklist (college of professional studies),https://studentfinance.northeastern.edu/applying-for-aid/college-of-professional-studies/
+22000,How to apply & checklist (international students),https://studentfinance.northeastern.edu/applying-for-aid/international-students/
+22001,How to apply & checklist (school of law),https://law.northeastern.edu/admissions/jd/financial-aid/
+22002,Undergraduate financial home page,https://studentfinance.northeastern.edu/applying-for-aid/undergraduate/
+22003,Graduate financial home page,https://studentfinance.northeastern.edu/applying-for-aid/graduate/
+22004,College of professional studies financial home page,https://studentfinance.northeastern.edu/applying-for-aid/college-of-professional-studies/
+22100,International students financial home page,https://studentfinance.northeastern.edu/applying-for-aid/international-students/
+22101,School of law financial home page,https://law.northeastern.edu/admissions/jd/financial-aid/
+22102,New student faq,https://studentemployment.neu.edu/cimages/New%20Student%20FAQ.pdf
+22103,Important student information,https://studentemployment.neu.edu/cmx_content.aspx?cpid=3
+22104,"The office of student employment, graduate assistantships & fellowships",https://studentemployment.neu.edu/Cmx_Content.aspx?cpId=10
