@@ -2,6 +2,14 @@
 data/conversations/*
 data/question_messages/*
 data/response_messages/*
+data/stored_user_data/*
+
+backend/backendIO.pyc
+cv.pyc
+email_helper.pyc
+prompts.pyc
+
 node_modules
+backend/__pycahce__
 backend/__pycache__/*
 source/__pycache__
