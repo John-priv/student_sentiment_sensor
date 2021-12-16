@@ -68,9 +68,15 @@ def get_current_u_id():
     '''
     interaction_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/stored_user_data/"))
     interaction_files = [f for f in os.listdir(interaction_dir) if os.path.isfile(os.path.join(interaction_dir, f))]
+    file_list = []
     try:
-        interaction_files.sort(reverse=True)
-        u_id = int(interaction_files[0].split('.')[0])  # Gets largest file_id
+        for i_file in interaction_files:
+            file_list.append(int(i_file.split('.')[0]))  # Extract number from each data file
+        file_list.sort(reverse=True)
+        # interaction_files = int(interaction_files.split('.'))
+        # interaction_files.sort(reverse=True)
+        # u_id = interaction_files[0]                             # Gets largest file_id
+        u_id = file_list[0]                                                 # Gets largest file_id
     except Exception as e:
         print('Could not get u_id, returning u_id = 0: {}'.format(e))
         u_id = 0
@@ -118,6 +124,7 @@ def main():
         if prompt_id == '0':
             interactions = []
             u_id = get_current_u_id() + 1
+            print('Recording u_id: {}'.format(u_id))
             prompt_id = '6'
         elif prompt_id == '7':
             open_prompt = question_prompts[prompt_id]
@@ -149,6 +156,7 @@ def main():
         elif prompt_id == '2400':
             backendIO.store_conversation(conversation, time)
             backendIO.store_interaction(interactions, emotion, str(u_id))
+            print('Storing u_id: {}'.format(u_id))
             conversation = []
             conversation.append(('Emotion', 'Null'))
             prompt_id = '0'
