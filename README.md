@@ -8,7 +8,7 @@ by Jack Carson, Tyler Ceballo, Mark Morton, Dave Pleteau, & John Privitera
 # The premise
 
 ## Some context
-44% of college students in a 2021 national study reported symptoms of anxiety and depression (“College students and Depression,” Mayo Clinic Health System, 07-Sep-2021).
+44% of college students in a 2021 USA national study reported symptoms of anxiety and depression (“College students and Depression,” Mayo Clinic Health System, 07-Sep-2021).
 Although on-campus mental health resources exist, a limited amount of people may make the time for them and many who need help are reluctant to reach out for various reasons.
 
 ## Our solution
